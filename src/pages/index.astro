@@ -4,6 +4,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 import powerOutage from "/public/power-outage.png"
+import ceo from "/public/ceo-thumbnail.png"
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
@@ -32,11 +33,11 @@ const last_posts = posts.slice(0, 3);
   </div>
 
   <HorizontalCard
-    title=""
+    title="Power Outage Prediction with Random Forest"
     img={powerOutage}
     url="https://kpkrishprasad.github.io/Power-Outage-Random-Forest-Regressor/"
     desc={
-        "This project by Krish Prasad focuses on predicting the duration of major U.S. power outages from 2000 to 2016, " +
+        "This project focuses on predicting the duration of major U.S. power outages from 2000 to 2016, " +
         "using a Random Forest Regressor implemented in Python. Leveraging scikit-learn for machine learning and pandas " +
         "for data manipulation, the project addresses complex challenges in the energy domain, such as the impact of " +
         "climate anomalies, urbanization, and economic factors on power grid resilience. Advanced data preprocessing, " +
@@ -53,12 +54,25 @@ const last_posts = posts.slice(0, 3);
   />
 
   <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img=""
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+
+   <HorizontalCard
+    title="CEOs Hate This Simple Trick"
+    img={ceo}
+    url="https://github.com/kpkrishprasad/CEO-visualization"
+    desc = {
+      "This project combines modern web development with data analysis, using JavaScript to create interactive visualizations of CEO compensation. " +
+      "I utilized Svelte to build a responsive and efficient user interface, while Vite was employed for rapid development and optimized performance. " +
+      "The project involved sourcing and processing a detailed dataset from Kaggle, which was then transformed into dynamic visualizations, such as scatter plots and bar charts, using JavaScript. " +
+      "These visualizations enable users to explore and understand the disparities in pay between CEOs and workers across different industries, " +
+      "showcasing my ability to blend development skills with data insights to create impactful, data-driven applications."
+  }
+  
+    badge="NEW"
+    videoDemo= "https://www.youtube.com/watch?v=YoSVfheAnN8"
+    visualization = "https://kpkrishprasad.github.io/CEO-visualization/"
+    githubUrl= "https://github.com/kpkrishprasad/CEO-visualization"
   />
+
   <div class="divider my-0"></div>
   <HorizontalCard
     title="Demo Project 3"
@@ -68,7 +82,7 @@ const last_posts = posts.slice(0, 3);
     badge="FOSS"
   />
 
-  <div>
+  <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
   </div>
 
@@ -86,5 +100,5 @@ const last_posts = posts.slice(0, 3);
         <div class="divider my-0" />
       </>
     ))
-  }
+  } -->
 </BaseLayout>
