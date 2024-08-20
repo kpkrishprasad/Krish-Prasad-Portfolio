@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 import powerOutage from "/public/power-outage.png"
 import ceo from "/public/ceo-thumbnail.png"
+import youtube from "public/youtube-thumbnail.webp"
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
@@ -31,6 +32,20 @@ const last_posts = posts.slice(0, 3);
   <div>
     <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
   </div>
+
+  <HorizontalCard
+    title="Youtube Copilot: AI-Powered YouTube Companion "
+    img={youtube}
+    url="https://github.com/kpkrishprasad/Youtube-Copilot"
+    desc={
+        "Youtube Copilot is a web application that provides YouTube video summaries, generates timestamps, and includes an interactive chatbot for querying video content. Built with Django as the backend framework, it uses the YouTube Data API to extract video captions, which are processed with advanced Natural Language Processing (NLP) techniques such as text summarization and keyword extraction. The Django backend orchestrates the data flow and serves the processed content, while the front-end, powered by JavaScript, handles dynamic content updates and user interactions. The application’s interface is styled with responsive CSS, ensuring a smooth and intuitive user experience, making it easier to explore and understand video content."
+    }
+
+    badge="NEW"
+    githubUrl= "https://github.com/kpkrishprasad/Youtube-Copilot"
+  />
+
+  <div class="divider my-0"></div>
 
   <HorizontalCard
     title="Power Outage Prediction with Random Forest"
@@ -73,14 +88,7 @@ const last_posts = posts.slice(0, 3);
     githubUrl= "https://github.com/kpkrishprasad/CEO-visualization"
   />
 
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/Krish-Prasad-Portfolio/power-outage."
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
+
 
   <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
